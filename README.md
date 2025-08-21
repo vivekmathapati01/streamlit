@@ -1,11 +1,11 @@
-# AURA - Researcher Agent
+#  Agent
 
 A Streamlit application for generating marketing campaign briefs from market research and objectives.
 
 ## Project Structure
 
 ```
-arena/
+streamlit/
 ├── app.py                          # Main application entry point
 ├── researcher_agent.py             # Legacy entry point (backward compatibility)
 ├── models/
