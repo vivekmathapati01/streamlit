@@ -8,31 +8,66 @@ from config.settings import INPUT_COST, OUTPUT_COST
 
 def _display_brief(brief):
 	st.subheader("Campaign Brief")
-	st.markdown(f"**Title**: {brief.title}")
-	st.markdown("**Objective Summary**")
-	st.write(brief.objective_summary)
+	
+	# Format the brief as text
+	brief_text = f"""CAMPAIGN BRIEF
 
-	def _render_list(title: str, items: List[str]):
-		if items:
-			st.markdown(f"**{title}**")
-			for it in items:
-				st.write(f"- {it}")
+Title: {brief.title}
 
-	_render_list("Target Audience", brief.target_audience)
-	_render_list("Key Insights", brief.key_insights)
-	st.markdown("**Value Proposition**")
-	st.write(brief.value_proposition)
-	_render_list("Messaging Pillars", brief.messaging_pillars)
-	_render_list("Recommended Channels", brief.channels)
-	_render_list("Recommendations", brief.recommendations)
-	_render_list("KPIs", brief.kpis)
+OBJECTIVE SUMMARY
+{brief.objective_summary}
+
+TARGET AUDIENCE"""
+	
+	if brief.target_audience:
+		for item in brief.target_audience:
+			brief_text += f"\n• {item}"
+	
+	brief_text += "\n\nKEY INSIGHTS"
+	if brief.key_insights:
+		for item in brief.key_insights:
+			brief_text += f"\n• {item}"
+	
+	brief_text += f"""
+
+VALUE PROPOSITION
+{brief.value_proposition}
+
+MESSAGING PILLARS"""
+	if brief.messaging_pillars:
+		for item in brief.messaging_pillars:
+			brief_text += f"\n• {item}"
+	
+	brief_text += "\n\nRECOMMENDED CHANNELS"
+	if brief.channels:
+		for item in brief.channels:
+			brief_text += f"\n• {item}"
+	
+	brief_text += "\n\nRECOMMENDATIONS"
+	if brief.recommendations:
+		for item in brief.recommendations:
+			brief_text += f"\n• {item}"
+	
+	brief_text += "\n\nKPIs"
+	if brief.kpis:
+		for item in brief.kpis:
+			brief_text += f"\n• {item}"
+	
 	if brief.budget_guidance:
-		st.markdown("**Budget Guidance**")
-		st.write(brief.budget_guidance)
+		brief_text += f"\n\nBUDGET GUIDANCE\n{brief.budget_guidance}"
+	
 	if brief.timeline:
-		st.markdown("**Timeline**")
-		st.write(brief.timeline)
-
+		brief_text += f"\n\nTIMELINE\n{brief.timeline}"
+	
+	# Display in text area
+	st.text_area(
+		"Generated Campaign Brief",
+		value=brief_text,
+		height=600,
+		help="Copy this text to use in your marketing campaigns"
+	)
+	
+	# Display metrics below the text area
 	col_a, col_b, col_c = st.columns(3)
 	col_a.metric("Input Tokens", brief.input_tokens)
 	col_b.metric("Output Tokens", brief.output_tokens)
@@ -48,7 +83,7 @@ def render_brief_generator():
 
 	# Upload research files
 	uploaded_files = st.file_uploader(
-		"Upload market research files (PDF, DOCX, TXT)", type=["pdf", "docx", "txt"], accept_multiple_files=True
+		"Upload market research files (PDF, DOCX, TXT, CSV)", type=["pdf", "docx", "txt", "csv"], accept_multiple_files=True
 	)
 
 	# Objectives input
