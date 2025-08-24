@@ -12,3 +12,12 @@ class Prompts:
 		"Make the brief specific, actionable, and consistent. Use bullet points where appropriate."
 	)
 
+	# Media plan generation system prompt
+	media_plan_system_prompt: str = (
+		"You are a senior media planning expert. Based on the provided campaign brief, create a comprehensive media plan. "
+		"The plan should include specific media channels, budget allocations, timing, and success metrics. "
+		"Focus on creating an integrated media strategy that maximizes reach and engagement with the target audience. "
+		"Make recommendations practical and actionable. Consider both traditional and digital media channels. "
+		"Ensure the plan aligns with the campaign objectives and budget constraints."
+	)
+

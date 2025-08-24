@@ -41,6 +41,7 @@ class BriefService:
 					("human", user),
 				)
 			)
+			print("media response: ", response)
 			parsed: CampaignBrief = response["parsed"]
 			parsed.input_tokens = response["raw"].usage_metadata.get("prompt_tokens", -1)
 			parsed.output_tokens = response["raw"].usage_metadata.get("completion_tokens", -1)
