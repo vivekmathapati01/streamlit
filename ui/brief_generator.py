@@ -49,7 +49,7 @@ def render_brief_generator():
 
 	# Upload research files
 	uploaded_files = st.file_uploader(
-		"Upload market research files (PDF, DOCX, TXT, CSV)", type=["pdf", "docx", "txt", "csv"], accept_multiple_files=True
+		"Upload market research files (PDF, DOCX, TXT, CSV, Excel)", type=["pdf", "docx", "txt", "csv", "xlsx", "xls"], accept_multiple_files=True
 	)
 
 	# Objectives input
