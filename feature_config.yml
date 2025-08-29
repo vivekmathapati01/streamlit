@@ -1,60 +1,50 @@
 feature_management:
   agents:
-    # Playground Features (optional if you want to restrict them)
-    "Playground > Chat Bot":
+    QuizzBot:
       - user_123
       - user_456
-    "Playground > Document Inference":
-      - user_123
-      - user_456
+    Feedback Classification:
       - user_789
-    "Playground > Image Inference":
-      - user_123
-    "Playground > Audio Inference":
-      - user_456
-      - user_789
-    "Playground > Document QnA (RAG)":
+    PPT to Doc:
       - user_123
       - user_999
-
-    # Skills (whitelist users per skill)
-    "Skill > Cheque Inference":
+    Cheque Inference:
       - user_123
-      - user_456
-    "Skill > Reply Engine(GRD)":
-      - user_123
-    "Skill > Nodal: Meeting Minutes":
-      - user_456
-    "Skill > Business Loan CRAN [Sample]":
-      - user_123
-      - user_789
-    "Skill > CIBIL Analyser [Sample]":
-      - user_123
-    "Skill > Quiz Generator!":
-      - user_123
-      - user_999
-    "Skill > QuizzBot!":
-      - user_999
-    "Skill > Audio: Meeting Minutes":
-      - user_123
-    "Skill > Feedback Classification":
-      - user_123
-      - user_456
-    "Skill > PPT to Doc":
-      - user_123
-    "Skill > Labels Scanner [Sample]":
-      - user_123
-      - user_456
-    "Skill > Marketing Pitch [Sample]":
-      - user_123
-    "Skill > Compliance":
       - user_456
       - user_789
-    "Skill > Stocks_statements_Agri":
+    Reply Engine(GRD):
       - user_123
-    "Skill > Stocks_statements_Consumer":
+      - user_456
+    Nodal: Meeting Minutes:
+      - user_789
+      - user_999
+    Business Loan CRAN [Sample]:
       - user_123
-    "Skill > Reply Engine V2 [Experimental]":
+    CIBIL Analyser [Sample]:
+      - user_456
+    Quiz Generator!:
       - user_123
-    "Skill > Compliance Checklist V2 [Experimental]":
+      - user_456
+      - user_789
+    Audio: Meeting Minutes:
+      - user_123
+      - user_999
+    Labels Scanner [Sample]:
+      - user_456
+      - user_789
+    Marketing Pitch [Sample]:
+      - user_123
+      - user_999
+    Compliance:
+      - user_456
+      - user_789
+    Stocks_statements_Agri:
+      - user_123
+      - user_456
+    Stocks_statements_Consumer:
+      - user_789
+      - user_999
+    Reply Engine V2 [Experimental]:
+      - user_123
+    Compliance Checklist V2 [Experimental]:
       - user_456
